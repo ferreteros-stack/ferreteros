@@ -14,6 +14,10 @@ class DevelopmentConfig(BaseConfig):
 class ProductionConfig(BaseConfig):
     DEBUG = False
 
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        "connect_args": {"sslmode": "require"}
+    }
+
 
 class TestingConfig(BaseConfig):
     TESTING = True
